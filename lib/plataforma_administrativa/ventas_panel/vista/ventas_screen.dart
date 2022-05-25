@@ -107,8 +107,7 @@ class _VentasScreenState extends State<VentasScreen> {
           });
     }
 
-    //Cupertino Ventana para Ios
-
+//Cupertino Ventana para Ios
     showCupertinoDialog(
         context: context,
         builder: (_) {
@@ -132,8 +131,6 @@ class _VentasScreenState extends State<VentasScreen> {
           );
         });
   }
-
-//Si no Se llena ningun servicio en field se cierra
 
   void addVentasToList(String tipoServicios) {
     print(tipoServicios);
