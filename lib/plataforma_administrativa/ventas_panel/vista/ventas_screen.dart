@@ -24,6 +24,7 @@ class _VentasScreenState extends State<VentasScreen> {
             ),
           ),
           backgroundColor: Colors.blueAccent,
+          elevation: 1,
         ),
         body: ListView.builder(
           itemCount: ventas.length,
@@ -33,6 +34,7 @@ class _VentasScreenState extends State<VentasScreen> {
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
+          elevation: 1,
           onPressed: addNewVentas,
         ));
   }
@@ -52,7 +54,7 @@ class _VentasScreenState extends State<VentasScreen> {
           alignment: Alignment.centerLeft,
           child: Text(
             'Eliminar Servicio',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ),
@@ -80,7 +82,7 @@ class _VentasScreenState extends State<VentasScreen> {
 // Vamos agregar el metodo para aggregar una nueva categoria de servicio de ventas
   addNewVentas() {
     final textCotnroller = new TextEditingController();
-    if (Platform.isAndroid) {
+    if (!Platform.isAndroid) {
       return showDialog(
           context: context,
           builder: (context) {
@@ -112,7 +114,7 @@ class _VentasScreenState extends State<VentasScreen> {
         context: context,
         builder: (_) {
           return CupertinoAlertDialog(
-            title: Text('Agregar nuevo servicio:'),
+            title: Text('Agregar nuevo servicio IOS:'),
             content: CupertinoTextField(
               controller: textCotnroller,
             ),
